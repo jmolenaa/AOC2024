@@ -36,11 +36,11 @@ def main():
 
 	for update in updates:
 		numbers = update.split(",")
-		updateNumbers = checkUpdate(numbers, rulesDict)
-		if updateNumbers == numbers:
+		updatedNumbers = checkUpdate(numbers, rulesDict)
+		if updatedNumbers == numbers:
 			part1 += int(numbers[int(len(numbers) / 2)])
 		else:
-			part2 += int(updateNumbers[int(len(numbers) / 2)])
+			part2 += int(updatedNumbers[int(len(numbers) / 2)])
 	print(f"The answer to part 1 is: {part1}")
 	print(f"The answer to part 2 is: {part2}")
 
