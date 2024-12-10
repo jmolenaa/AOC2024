@@ -1,3 +1,6 @@
+from utils import inBounds, newGrid
+
+
 def main():
 	with open("input") as file:
 		lines = file.read().split("\n")
