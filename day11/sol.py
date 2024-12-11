@@ -2,27 +2,11 @@ from utils import inBounds, newGrid
 from collections import defaultdict
 
 
-def simulateUntilRepeat(beginStone):
-	stones = [beginStone]
-	for i in range(35):
-		line = list()
-		for stone in stones:
-			if stone == 0:
-				line.append(1)
-			elif len(str(stone)) % 2 == 0:
-				stone = str(stone)
-				halflength = int(len(stone) / 2)
-				stone1, stone2 = int(stone[:halflength]), int(stone[halflength:])
-				line.append(stone1)
-				line.append(stone2)
-			else:
-				line.append(stone * 2024)
-		stones = list(line)
-		if stones[0] == beginStone:
-			return stones, i
-
-
-
+def calculateHowManyStones(stonesDict: defaultdict[int]):
+	stoneAmount = 0
+	for stoneId in stonesDict:
+		stoneAmount += stonesDict[stoneId]
+	return stoneAmount
 
 
 def main():
@@ -32,10 +16,23 @@ def main():
 	part1 = 0
 	part2 = 0
 	stones = list(map(int, line.split()))
+	# keeping track of stones through a default dictionary
+	# stone engravings are the keys and the values are the amoung of stones with that engraving
+	# at the start all the stones only appear once
 	stonesDict = defaultdict(int)
 	for stone in stones:
 		stonesDict[stone] = 1
 
+	# simulating 75 blinks
+	# we make new dictionaries for each blink
+	# we do this, because applying to rules to the stones in place
+	# would change the current dictionary which could cause issues
+	# for every engraving we apply the rule and add
+	# however many stones with that engraving we had to the new
+	# dictionary with the new engraving as the key
+	# f.e. if we have 10 stones with engraving 0
+	# we add 10 stones to the new dictionary with engraving 1
+	# the new dictionary does not have the 10 stones with engraving 0
 	for i in range(75):
 		newStonesDict = defaultdict(int)
 		for stone, amount in stonesDict.items():
@@ -50,35 +47,13 @@ def main():
 			else:
 				newStonesDict[stone * 2024] += amount
 		stonesDict = newStonesDict.copy()
-		# print(stonesDict)
+		if i == 24:
+			part1 = calculateHowManyStones(stonesDict)
 
-	for key, value in stonesDict.items():
-		part1 += value
-
+	part2 = calculateHowManyStones(stonesDict)
 
 	print(f"The answer to part 1 is: {part1}")
 	print(f"The answer to part 2 is: {part2}")
 
 if __name__ == "__main__":
 	main()
-
-# Initial arrangement:
-# 125 17
-#
-# After 1 blink:
-# 253000 1 7
-#
-# After 2 blinks:
-# 253 0 2024 14168
-#
-# After 3 blinks:
-# 512072 1 20 24 28676032
-#
-# After 4 blinks:
-# 512 72 2024 2 0 2 4 2867 6032
-#
-# After 5 blinks:
-# 1036288 7 2 20 24 4048 1 4048 8096 28 67 60 32
-#
-# After 6 blinks:
-# 2097446912 14168 4048 2 0 2 4 40 48 2024 40 48 80 96 2 8 6 7 6 0 3 2
