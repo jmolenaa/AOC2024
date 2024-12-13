@@ -1,3 +1,6 @@
+import re
+
+
 def inBounds(grid, pos):
 	if pos[0] < 0 or pos[0] >= len(grid) or \
 			pos[1] < 0 or pos[1] >= len(grid[0]):
@@ -25,5 +28,12 @@ def addPositions(pos1, pos2):
 def subtractPositions(pos1, pos2):
 	return [pos1[0] - pos2[0], pos1[1] - pos2[1]]
 
+
+def getNumbers(line: str):
+	return re.findall(r"\d+", line)
+
+
+def getNumbersInt(line: str):
+	return list(map(int, re.findall(r"\d+", line)))
 	# for dy, dx in directions:
 	# 	new_y, new_x = y + dy, x + dx

@@ -1,4 +1,4 @@
-from utils import inBounds, newGrid
+from utils import *
 
 
 def main():
