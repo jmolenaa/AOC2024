@@ -18,5 +18,12 @@ def makeDirections():
 	return [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
 
+def addPositions(pos1, pos2):
+	return [pos1[0] + pos2[0], pos1[1] + pos2[1]]
+
+
+def subtractPositions(pos1, pos2):
+	return [pos1[0] - pos2[0], pos1[1] - pos2[1]]
+
 	# for dy, dx in directions:
 	# 	new_y, new_x = y + dy, x + dx
