@@ -34,6 +34,14 @@ def getNumbers(line: str):
 
 
 def getNumbersInt(line: str):
-	return list(map(int, re.findall(r"\d+", line)))
+	return list(map(int, re.findall(r"-*\d+", line)))
+
+
+def getNumbersNegative(line: str):
+	return re.findall(r"-*\d+", line)
+
+
+def getNumbersIntNegative(line: str):
+	return list(map(int, re.findall(r"-*\d+", line)))
 	# for dy, dx in directions:
 	# 	new_y, new_x = y + dy, x + dx
