@@ -45,3 +45,11 @@ def getNumbersIntNegative(line: str):
 	return list(map(int, re.findall(r"-*\d+", line)))
 	# for dy, dx in directions:
 	# 	new_y, new_x = y + dy, x + dx
+
+
+def getGridChar(grid, pos):
+	return grid[pos[0]][pos[1]]
+
+
+def setGridChar(grid, pos, char):
+	grid[pos[0]][pos[1]] = char
