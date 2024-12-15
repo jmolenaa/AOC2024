@@ -8,7 +8,8 @@ def main():
 	part1 = 0
 	part2 = 0
 	for line in lines:
-		numbers = getNumbersInt(line)
+		numbers = getNumsNeg(line)
+
 		
 
 	print(f"The answer to part 1 is: {part1}")

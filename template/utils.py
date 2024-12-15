@@ -17,31 +17,39 @@ def newGrid(grid):
 	return newgrid
 
 
-def makeDirections():
+def makeDirs():
 	return [(0, 1), (0, -1), (1, 0), (-1, 0)]
+	# for dy, dx in directions:
+	# 	new_y, new_x = y + dy, x + dx
 
 
-def addPositions(pos1, pos2):
+def addPos(pos1, pos2):
 	return [pos1[0] + pos2[0], pos1[1] + pos2[1]]
 
 
-def subtractPositions(pos1, pos2):
+def subPos(pos1, pos2):
 	return [pos1[0] - pos2[0], pos1[1] - pos2[1]]
 
 
-def getNumbers(line: str):
+def getNums(line: str):
+	return list(map(int, re.findall(r"-*\d+", line)))
+
+
+def getNumsStr(line: str):
 	return re.findall(r"\d+", line)
 
 
-def getNumbersInt(line: str):
+def getNumsNeg(line: str):
 	return list(map(int, re.findall(r"-*\d+", line)))
 
 
-def getNumbersNegative(line: str):
+def getNumsStrNeg(line: str):
 	return re.findall(r"-*\d+", line)
 
 
-def getNumbersIntNegative(line: str):
-	return list(map(int, re.findall(r"-*\d+", line)))
-	# for dy, dx in directions:
-	# 	new_y, new_x = y + dy, x + dx
+def gridChar(grid, pos):
+	return grid[pos[0]][pos[1]]
+
+
+def setGridChar(grid, pos, char):
+	grid[pos[0]][pos[1]] = char
