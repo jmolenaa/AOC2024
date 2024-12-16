@@ -1,113 +1,85 @@
 from utils import *
 import sys
-minCost = 100000000000000
-alreadyHappened = dict()
-part2 = set()
 
 
 def turn(dir):
-	if dir == (0, 1):
-		return (1, 0)
-	elif dir == (1, 0):
-		return (0, -1)
-	elif dir == (0, -1):
-		return (-1, 0)
-	elif dir == (-1, 0):
-		return (0, 1)
+	turns = {
+		(0, 1): (1, 0),
+		(1, 0): (0, -1),
+		(0, -1): (-1, 0),
+		(-1, 0): (0, 1)
+	}
+	return turns[dir]
 
 
-def makeStep(grid, pos : tuple, dir : tuple, positions: set, cost: int):
-	global minCost
-	global alreadyHappened
+def makeStep(grid, pos : tuple, dir : tuple, positions: set, cost: int, minScore, alreadyHappened: dict, seats: set):
+
+	# check if we reached the end,
+	# update the lowest score if the current one is lower than the previous lowest
+	# also, clear seats, since the previous lowest score isn't valid
+	# if our current score is equal to the minimum score, add the positions
+	# through which we got to the seats set
+	if gridChar(grid, pos) == 'E':
+		if cost < minScore[0]:
+			minScore[0] = cost
+			seats.clear()
+		if cost == minScore[0]:
+			seats.update(positions)
+		return
+
+	# checks if current position and direction were already visited
+	# if the cost we had in the previous visit was lower than now,
+	# there's no point continuing down this path since the final score will always be higher
+	# if the current score is lower or we haven't visited we cache the current state
 	if (pos, dir) in alreadyHappened and alreadyHappened[(pos, dir)] < cost:
 		return
 	alreadyHappened[(pos, dir)] = cost
-	if cost > minCost:
+
+	# no point continuing if we already exceeded our minimum score
+	if cost > minScore[0]:
 		return
-	if gridChar(grid, pos) == 'E':
-		if cost < minCost:
-			minCost = cost
-		return
+
+	# keep set of newpositions so we don't change the positions of the previous iteration
 	newpositions = set(positions)
-	i = 0
 	newDir = tuple(dir)
-	while i < 4:
+	# makes steps in every direction as long as there is a spot free and
+	# we haven't visited that spot in the current route
+	# the first two turns add 1000 to the cost, the third one reduces it by 1000
+	# this is because we can turn clockwise instead of 3 times counterclockwise
+	for i in range(4):
 		newPos = tuple(addPos(pos, newDir))
 		if gridChar(grid, newPos) in {'.', 'E'} and newPos not in positions:
-			cost += 1
 			newpositions.add(newPos)
-			makeStep(grid, newPos, newDir, newpositions, cost)
+			makeStep(grid, newPos, newDir, newpositions, cost + 1, minScore, alreadyHappened, seats)
 			newpositions.remove(newPos)
-			cost -= 1
+
+		newDir = turn(newDir)
 		if i < 2:
 			cost += 1000
-			newDir = turn(newDir)
-			i += 1
-		elif i > 1:
+		else:
 			cost -= 1000
-			newDir = turn(newDir)
-			i += 1
-
-
-def makeStepPart2(grid, pos : tuple, dir : tuple, positions: set, cost: int):
-	global minCost
-	global alreadyHappened
-	global part2
-	if (pos, dir) in alreadyHappened and alreadyHappened[(pos, dir)] < cost:
-		return
-	alreadyHappened[(pos, dir)] = cost
-	if cost > minCost:
-		return
-	if gridChar(grid, pos) == 'E':
-		print("happens")
-		if cost == minCost:
-			part2.update(positions)
-		return
-	newpositions = set(positions)
-	i = 0
-	newDir = tuple(dir)
-	while i < 4:
-		newPos = tuple(addPos(pos, newDir))
-		if gridChar(grid, newPos) in {'.', 'E'} and newPos not in positions:
-			# print("no", newPos, newpositions)
-			cost += 1
-			newpositions.add(newPos)
-			makeStepPart2(grid, newPos, newDir, newpositions, cost)
-			newpositions.remove(newPos)
-			cost -= 1
-		if i < 2:
-			cost += 1000
-			newDir = turn(newDir)
-			i += 1
-		elif i > 1:
-			cost -= 1000
-			newDir = turn(newDir)
-			i += 1
 
 
 def main():
 	with open("input") as file:
-		lines = file.read().split("\n")
+		grid = file.read().split("\n")
 
-	# part1 = 0
-	# part2 = 0
-	pos = (len(lines) - 2, 1)
-	dir = (0, 1)
-	dirs = makeDirs()
-	positions = set()
-	positions.add(pos)
+	startPos = (len(grid) - 2, 1)
+	startDir = (0, 1)
+	positions = {startPos}
+
 	sys.setrecursionlimit(5000)
-	print(sys.getrecursionlimit())
-	makeStep(lines, pos, dir, positions, 0)
-	global alreadyHappened
+
+	minScore = [100000000000000]
+	# caching dictionary, keys are positions and directions, values are the cost on that spot
 	alreadyHappened = dict()
-	print(minCost)
-	makeStepPart2(lines, pos, dir, positions, 0)
+	# set keeping track of positions on lowest cost routes
+	seats = set()
 
-		
+	makeStep(grid, startPos, startDir, positions, 0, minScore, alreadyHappened, seats)
 
-	print(f"The answer to part 1 is: {minCost}")
-	print(f"The answer to part 2 is: {len(part2)}")
+	print(f"The answer to part 1 is: {minScore[0]}")
+	print(f"The answer to part 2 is: {len(seats)}")
 
 if __name__ == "__main__":
 	main()
