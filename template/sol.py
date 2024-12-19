@@ -1,8 +1,9 @@
 from utils import *
+import sys
 
 
-def main():
-	with open("input") as file:
+def main(file):
+	with open(file) as file:
 		lines = file.read().split("\n")
 
 	part1 = 0
@@ -10,10 +11,12 @@ def main():
 	for line in lines:
 		numbers = getNumsNeg(line)
 
-		
-
 	print(f"The answer to part 1 is: {part1}")
 	print(f"The answer to part 2 is: {part2}")
 
+
 if __name__ == "__main__":
-	main()
+	if len(sys.argv) == 1:
+		main("test_case")
+	else:
+		main(sys.argv[1])
