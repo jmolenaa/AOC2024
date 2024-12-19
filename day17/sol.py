@@ -67,7 +67,22 @@ def runIterations(program, startA, slice, iterators):
 		# time.sleep(1)
 
 # part1 is pretty straigthtforward
-# part2 though is horrible
+# part2 though is horrible bruteforce/hardcode
+# what I do is I calculate the lowest possible A
+# this is the first number that when divided by 8 len(program) times is 0
+# I then increment number A and run the program for each of those numbers
+# Whenever the first 5 output numbers of the current A are the same as the programs
+# I print which iteration this happened on
+# I proceed to do this until a loop in iterations appears
+# the first 5 numbers repeat every 66824, 256, 63992, 1504520, 256, 261888, 256, 199160, 66824, 256, 63992, 1966080
+# keep in mind this isn't every 66824 iterations,
+# but after 66824 iterations and then the next repeat is after 256 and so on
+# now I do the same but I use these iterators to increment A, f.e. if A starts at 0
+# we increment A to 66824, then to 67080, then to 131072 etc.
+# now we will be checking the first 6 output numbers and comparing them to
+# the first 6 of the program and again we save the iterators
+# we repeat this process until we have the iterators for the first 9 numbers
+# now we actually let the program run until it finds a solution, takes about 5 minutes
 def main():
 	with open("input") as file:
 		lines = file.read().split("\n")
