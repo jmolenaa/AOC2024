@@ -24,11 +24,11 @@ def makeDirs():
 
 
 def addPos(pos1, pos2):
-	return [pos1[0] + pos2[0], pos1[1] + pos2[1]]
+	return (pos1[0] + pos2[0], pos1[1] + pos2[1])
 
 
 def subPos(pos1, pos2):
-	return [pos1[0] - pos2[0], pos1[1] - pos2[1]]
+	return (pos1[0] - pos2[0], pos1[1] - pos2[1])
 
 
 def getNums(line: str):
@@ -53,3 +53,13 @@ def gridChar(grid, pos):
 
 def setGridChar(grid, pos, char):
 	grid[pos[0]][pos[1]] = char
+
+
+def findInGrid(grid, charToFind):
+	for y, line in enumerate(grid):
+		for x, char in enumerate(line):
+			if char == charToFind:
+				return (y, x)
+
+	def distance(pos1, pos2):
+		return abs(pos1[0] - pos2[0]) + abs(pos1[1] - pos2[1])
