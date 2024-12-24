@@ -1,0 +1,315 @@
+35184372088831 35184372088831 1111111111111111111111111111111111111111111110
+The answer to part 1 is: 70368744177662
+1111111111111111111111111111111111111111111110
+1111111111111111111111111111111111111111111110
+
+FOR WIRE:  z01
+wnt AND gct  =  dnc
+wnt XOR gct  =  z01
+gcq OR dnc  =  qcs
+x01 AND y01  =  gcq
+y01 XOR x01  =  wnt
+
+FOR WIRE:  z02
+qcs AND gwm  =  vhs
+y02 AND x02  =  vhv
+vhv OR vhs  =  ktn
+qcs XOR gwm  =  z02
+y02 XOR x02  =  gwm
+
+FOR WIRE:  z03
+x03 XOR y03  =  ngv
+ngv XOR ktn  =  z03
+x03 AND y03  =  thd
+ngv AND ktn  =  ddq
+thd OR ddq  =  jht
+
+FOR WIRE:  z04
+jht AND ptw  =  cjj
+y04 AND x04  =  tpf
+tpf OR cjj  =  hks
+jht XOR ptw  =  z04
+y04 XOR x04  =  ptw
+
+FOR WIRE:  z05
+x05 XOR y05  =  rvt
+hks AND rvt  =  gfm
+rvt XOR hks  =  z05
+gfm OR wkt  =  vfb
+y05 AND x05  =  wkt
+
+FOR WIRE:  z06
+qkw OR wnm  =  bwh
+y06 XOR x06  =  kmj
+kmj XOR vfb  =  z06
+kmj AND vfb  =  qkw
+x06 AND y06  =  wnm
+
+FOR WIRE:  z07
+hjb AND bwh  =  qks
+x07 XOR y07  =  hjb
+jrv OR qks  =  gds
+bwh XOR hjb  =  z07
+y07 AND x07  =  jrv
+
+FOR WIRE:  z08
+hwq AND gds  =  ptr
+y08 AND x08  =  vtj
+vtj OR ptr  =  jfv
+y08 XOR x08  =  hwq
+hwq XOR gds  =  z08
+
+FOR WIRE:  z09
+mrt XOR jfv  =  z09
+cdw OR jbg  =  qjw
+y09 XOR x09  =  mrt
+x09 AND y09  =  cdw
+mrt AND jfv  =  jbg
+
+FOR WIRE:  z10
+x10 AND y10  =  qvt
+qvt OR gfw  =  jqk
+nkg AND qjw  =  gfw
+qjw XOR nkg  =  z10
+y10 XOR x10  =  nkg
+
+FOR WIRE:  z11
+jqk XOR mnq  =  z11
+dkt OR hcm  =  rtk
+x11 AND y11  =  dkt
+jqk AND mnq  =  hcm
+y11 XOR x11  =  mnq
+
+FOR WIRE:  z12
+qdg OR fvt  =  tdb
+pdw XOR rtk  =  z12
+x12 AND y12  =  qdg
+rtk AND pdw  =  fvt
+x12 XOR y12  =  pdw
+
+FOR WIRE:  z13
+x13 AND y13  =  sbt
+x13 XOR y13  =  jdv
+sbt OR wtg  =  ntb
+tdb AND jdv  =  wtg
+jdv XOR tdb  =  z13
+
+FOR WIRE:  z14
+sbw OR hrb  =  rgk
+kqh AND ntb  =  hrb
+ntb XOR kqh  =  z14
+x14 AND y14  =  sbw
+x14 XOR y14  =  kqh
+
+FOR WIRE:  z15
+dtn OR gvb  =  fqb
+rgk XOR mrg  =  z15
+y15 XOR x15  =  mrg
+mrg AND rgk  =  dtn
+y15 AND x15  =  gvb
+
+FOR WIRE:  z16
+rsf XOR fqb  =  z16
+fqb AND rsf  =  wth
+wth OR qwn  =  cfc
+y16 XOR x16  =  rsf
+x16 AND y16  =  qwn
+
+FOR WIRE:  z17
+ffj OR vqn  =  msb
+cfc XOR qgm  =  z17
+cfc AND qgm  =  vqn
+x17 AND y17  =  ffj
+y17 XOR x17  =  qgm
+
+FOR WIRE:  z18
+mcc OR cgn  =  jcg
+y18 XOR x18  =  qkr
+msb AND qkr  =  mcc
+msb XOR qkr  =  z18
+y18 AND x18  =  cgn
+
+FOR WIRE:  z19
+x19 XOR y19  =  wmb
+nhb OR vvf  =  ssr
+wmb AND jcg  =  vvf
+x19 AND y19  =  nhb
+jcg XOR wmb  =  z19
+
+FOR WIRE:  z20
+sjb AND ssr  =  mjf
+sjb XOR ssr  =  z20
+y20 XOR x20  =  sjb
+wmd OR mjf  =  fgw
+y20 AND x20  =  wmd
+
+FOR WIRE:  z21
+x21 AND y21  =  bnk
+fgw AND pqg  =  qpk
+bnk OR qpk  =  gtb
+fgw XOR pqg  =  z21
+x21 XOR y21  =  pqg
+
+FOR WIRE:  z22
+y22 AND x22  =  ntn
+gtb XOR hbj  =  z22
+x22 XOR y22  =  hbj
+gtb AND hbj  =  kjm
+ntn OR kjm  =  shg
+
+FOR WIRE:  z23
+fgn XOR shg  =  z23
+y23 AND x23  =  dck
+dck OR fwj  =  kvf
+x23 XOR y23  =  fgn
+shg AND fgn  =  fwj
+
+FOR WIRE:  z24
+kvf AND drc  =  wdj
+hdg OR wdj  =  jgq
+x24 XOR y24  =  drc
+drc XOR kvf  =  z24
+y24 AND x24  =  hdg
+
+FOR WIRE:  z25
+jgq XOR msf  =  z25
+jgq AND msf  =  fqj
+fqj OR shj  =  hnq
+y25 XOR x25  =  msf
+x25 AND y25  =  shj
+
+FOR WIRE:  z26
+y26 AND x26  =  tvg
+pkc AND hnq  =  vds
+x26 XOR y26  =  pkc
+pkc XOR hnq  =  z26
+tvg OR vds  =  kpm
+
+FOR WIRE:  z27
+vks OR kfb  =  dpc
+kpm XOR tjh  =  z27
+x27 XOR y27  =  tjh
+x27 AND y27  =  kfb
+tjh AND kpm  =  vks
+
+FOR WIRE:  z28
+dpc AND mgw  =  hbd
+x28 AND y28  =  btk
+hbd OR btk  =  chr
+x28 XOR y28  =  mgw
+mgw XOR dpc  =  z28
+
+FOR WIRE:  z29
+x29 XOR y29  =  rfr
+rfr AND chr  =  tbc
+tpm OR tbc  =  jph
+x29 AND y29  =  tpm
+chr XOR rfr  =  z29
+
+FOR WIRE:  z30
+x30 AND y30  =  ktw
+srr OR ktw  =  vfp
+tft AND jph  =  srr
+jph XOR tft  =  z30
+x30 XOR y30  =  tft
+
+FOR WIRE:  z31
+x31 XOR y31  =  fsp
+fnq OR wpv  =  nfh
+vfp AND fsp  =  fnq
+y31 AND x31  =  wpv
+fsp XOR vfp  =  z31
+
+FOR WIRE:  z32
+x32 XOR y32  =  hnc
+x32 AND y32  =  kss
+nfh XOR hnc  =  z32
+kss OR tbr  =  kdc
+hnc AND nfh  =  tbr
+
+FOR WIRE:  z33
+x33 XOR y33  =  gts
+kdc XOR gts  =  z33
+qfd OR pmm  =  rmg
+kdc AND gts  =  qfd
+x33 AND y33  =  pmm
+
+FOR WIRE:  z34
+y34 AND x34  =  jhv
+vcc OR jhv  =  jrr
+rmg AND hrg  =  vcc
+rmg XOR hrg  =  z34
+y34 XOR x34  =  hrg
+
+FOR WIRE:  z35
+y35 XOR x35  =  jpn
+y35 AND x35  =  qwb
+jrr XOR jpn  =  z35
+qwb OR hrt  =  wvd
+jrr AND jpn  =  hrt
+
+FOR WIRE:  z36
+wvd XOR rqh  =  z36
+rqh AND wvd  =  hpn
+bfh OR hpn  =  vhp
+x36 AND y36  =  bfh
+x36 XOR y36  =  rqh
+
+FOR WIRE:  z37
+smb XOR vhp  =  z37
+gng OR qgb  =  nvh
+y37 XOR x37  =  smb
+x37 AND y37  =  gng
+vhp AND smb  =  qgb
+
+FOR WIRE:  z38
+nvh AND dwr  =  rck
+rck OR rbs  =  dpt
+y38 AND x38  =  rbs
+x38 XOR y38  =  dwr
+dwr XOR nvh  =  z38
+
+FOR WIRE:  z39
+y39 XOR x39  =  mwh
+mwh AND dpt  =  kbq
+kbq OR qtb  =  ckq
+x39 AND y39  =  qtb
+dpt XOR mwh  =  z39
+
+FOR WIRE:  z40
+cjg OR ttn  =  gcd
+npv AND ckq  =  cjg
+y40 AND x40  =  ttn
+x40 XOR y40  =  npv
+ckq XOR npv  =  z40
+
+FOR WIRE:  z41
+gcd AND rtg  =  mmq
+y41 XOR x41  =  rtg
+twc OR mmq  =  dqt
+y41 AND x41  =  twc
+rtg XOR gcd  =  z41
+
+FOR WIRE:  z42
+jkh OR rgv  =  fkb
+y42 AND x42  =  jkh
+vgb XOR dqt  =  z42
+dqt AND vgb  =  rgv
+x42 XOR y42  =  vgb
+
+FOR WIRE:  z43
+kqf XOR fkb  =  z43
+kqf AND fkb  =  qdb
+x43 AND y43  =  smm
+smm OR qdb  =  scd
+y43 XOR x43  =  kqf
+
+FOR WIRE:  z44
+y44 XOR x44  =  jts
+scd AND jts  =  bjt
+knj OR bjt  =  z45
+y44 AND x44  =  knj
+scd XOR jts  =  z44
+
+FOR WIRE:  z45
+The answer to part 2 is: ['dck', 'fgn', 'nvh', 'qdg', 'vvf', 'z12', 'z19', 'z37']
